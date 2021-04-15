@@ -1,0 +1,87 @@
+
+.sidebar__photos{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 80px;
+    height: 100vh;
+    padding-top: 15px;
+    background: var(--color-sidebar-img);
+    box-sizing: border-box;
+    overflow-y: scroll; 
+    color: white
+}
+.sidebar__photos::-webkit-scrollbar{
+    display: none;
+}
+.sidebar__photos::-webkit-scrollbar-track {
+    background: white;
+}
+.sidebar__photos::-webkit-scrollbar-thumb {
+    background-color: #1b1b1b34;
+}
+
+hr{
+    width: 50%;
+    border: 1px solid #2D2F32;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+
+/*Code complete in the Chat.css in the header icons*/
+.sidebar__user abbr[title]:hover::after {
+    content: attr(title);
+    
+    /* position tooltip like the native one */
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+}
+
+
+/*Add server form*/
+.add__server{
+    position: absolute;
+    transform: translate(50%, 50%);
+    width: 50%;
+    height: 50%;
+    background: rgba(24, 23, 23, 0.623);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.add__server input{
+    width: 80%;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    margin: 20px 0 ;
+    position: relative;
+    font-size: 15px;
+}
+.add__server input[type=button]{
+    background: #554EA9;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    width: 50%;
+    color: white;
+    outline: none;
+    border: none;
+}
+.add__server input[type=button]:hover{
+    background: white;
+    color: #554EA9;
+}
+.add__server svg{
+    color :white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+    cursor: pointer;
+}

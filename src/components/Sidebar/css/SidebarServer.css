@@ -1,0 +1,77 @@
+/*-------------Sidebar Channels--------*/
+
+.sidebar__server{
+    display: flex;
+    flex-direction: column;
+    background: var(--colorbg-channels);
+    width: 100%;
+    height: 100vh;
+    color: var(--fontcolor-channels-section)
+}
+
+/*---------Header------------------*/
+.sidebar__server-header{
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    background: var(--colorbg-channels);
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.3);
+    font-family: var(--fontfamily-channels-section);
+    cursor: pointer;
+    color: var(--fontcolor-hover-channels-section);
+}
+.sidebar__server-header:hover{
+    background: var(--colorbg-hover-channels-header);
+}
+.sidebar__server-header > h1{
+    font-size: var(--fontsize-channels-section);
+    flex: 1;
+}
+.sidebar__server-header svg{
+    color: var(--fontcolor-hover-channels-section);
+
+}
+
+/*Establecer estado de usuario bottom sidebar*/
+.sidebar__user{
+    display: flex;
+    align-items: center; 
+    padding: 10px 15px;
+    background: #292b2f;
+}
+
+.sidebar__user-name{
+    flex: 1;
+    margin-left: 8px;
+}
+.sidebar__user-name > p{
+    font-weight: 700;
+    color: var(--colorfont-primary);
+    font-size: 14px;
+    text-align: left;
+}
+.sidebar__user-name > span{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+.sidebar__user > abbr svg{
+    color: var(--fontcolor-channels-section);
+}
+.sidebar__user button{
+    padding:0 0 0 15px !important;
+    margin: 0 !important;
+}
+
+
+/*Code complete in the Chat.css in the header icons*/
+.sidebar__user abbr[title]:hover::after {
+    content: attr(title);
+    
+    /* position tooltip like the native one */
+    position: absolute;
+    left: 0;
+    bottom: 60px;
+}
+

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+    --animation-ease: all .3s ease-in-out;
+    --color-sidebar-img: #202225;
+    --colorfont-primary: #fff;
+
+    --colorbg-channels: #2F3136;
+    --colorbg-hover-channels-header: #34373C;
+
+    --fontsize-channels-title-section: 12px;
+    --fontsize-channels-section: 16px;
+    --fontfamily-channels-section:'Roboto', sans-serif;
+
+    --color-hover-channels-body: #393C43;
+    --fontcolor-channels-section: #70747B;
+    --fontcolor-hover-channels-section: #DCDDBF;
+}
+
+/*-------Sidebar section-------*/
+.sidebar{
+    display: flex;
+    flex: .25;
+    height: 100vh;
+    background: white;
+}
+
+
+
+
