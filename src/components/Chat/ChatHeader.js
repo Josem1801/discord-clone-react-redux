@@ -7,26 +7,28 @@ import BeenhereIcon from '@material-ui/icons/Beenhere';
 import InboxIcon from '@material-ui/icons/Inbox';
 import SearchIcon from '@material-ui/icons/Search';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { Avatar, IconButton } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 
 //LogOut
-import { logout } from '../../features/userSlice';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectChannelName } from '../../features/appSlice';
-
+import { auth } from '../../firebase';
+import { logout } from '../../features/userSlice';
 
 function ChatHeader() {
     const channelName = useSelector(selectChannelName)
-
+    const dispatch = useDispatch()
+ 
     const logOut = () => {
         auth.signOut()
+        dispatch(logout())
     }
 
     return (
         <header className='chat__header'>
             <div className="chat__header-title">
                 <span className='chat__header-hash'>#</span>
-                <h3>{channelName}</h3>
+                <h3>{channelName ? channelName: ''}</h3>
             </div>
             <div className="chat__header-icons">
                 <abbr title="Silenciar">

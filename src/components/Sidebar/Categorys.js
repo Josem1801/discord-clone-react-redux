@@ -4,7 +4,7 @@ import './css/Categorys.css'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import AddIcon from '@material-ui/icons/Add';
 import db from '../../firebase';
-import { selectCategoryId, selectServerId, setCategoryId } from '../../features/appSlice';
+import { selectServerId, setCategoryId } from '../../features/appSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Channel from './Channel';
 
@@ -26,9 +26,11 @@ function SidebarCategory( {categoryId, categoryName} ) {
     }
 
     const handdleAddChannel = () => {
-        const channel = prompt("Enter the channel's name") ? this : '';
-        console.log(channel)
-        if(channel.trim().length > 0 ){
+        const channel = prompt("Enter the channel's name");
+        if(channel == undefined){
+            return(alert('Enter something please'))
+        }
+        if(channel.trim().length > 0){
             db.collection('servers').doc(serverId)
             .collection('categorys').doc(categoryId)
             .collection('/channels').add({

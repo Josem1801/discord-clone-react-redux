@@ -10,7 +10,7 @@ import MicOffIcon from '@material-ui/icons/MicOff';
 import HeadsetIcon from '@material-ui/icons/Headset';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { selectUser } from '../../features/userSlice';
-import { selectServerId, selectServerName } from '../../features/appSlice';
+import { selectCategoryName, selectServerId, selectServerName } from '../../features/appSlice';
 import { useSelector } from 'react-redux';
 import db from '../../firebase';
 import Categorys from './Categorys';
@@ -22,9 +22,13 @@ function SidebarChannels() {
 
     const user = useSelector(selectUser)
     const serverName = useSelector(selectServerName)
+    const categoryName = useSelector(selectCategoryName)
 
     function handdleAddCategory(){
-        const category = prompt("Enter the new category's name") ? this : '';
+        const category = prompt("Enter the new category's name");
+        if(category == undefined){
+            return(alert('Enter something please'))
+        }
         if(category.trim().length > 0){
             db.collection('servers').doc(serverId).collection('/categorys').add({
                 categoryName: category

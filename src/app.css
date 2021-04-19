@@ -4,5 +4,5 @@
 
 .App{
   display: flex;
-  
+  overflow-y: hidden;
 }

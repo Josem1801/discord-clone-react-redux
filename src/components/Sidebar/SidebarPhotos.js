@@ -18,7 +18,8 @@ function SidebarPhotos() {
     const [servers, setServers] = useState([])
     const refServer = useRef();
     const refPhotoServer = useRef();
-  
+
+
     //functions
     const handdleAddServer = () => {
         const nameServer = refServer.current.value
@@ -47,7 +48,7 @@ function SidebarPhotos() {
         <section className="sidebar__photos">
 
             {/*User defualt*/}
-            <Photo photoLink={user.photo} alt={user.displayName}/>
+            <Photo serverName={user.displayName} serverId={'localId'} photoLink={user.photo} alt={user.displayName}/>
             <hr/>
 
             {/*Created Items*/}

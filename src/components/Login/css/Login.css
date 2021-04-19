@@ -27,7 +27,7 @@
 .login__card > img {
     width: 75%;
 }
-.login__btn-google{
+.login__btn-google , .login__btn-invited{
     width: 280px;
     height: 60px;
     border: 5px solid rgba(219, 70, 70, 0.788);
@@ -42,6 +42,9 @@
     cursor: pointer;
     transition: .25s ease-in-out;
 }
+.login__btn-invited{
+    border: 5px solid black;
+}
 
 .login__btn-google:hover{
     transform: scale(1.1);
@@ -49,7 +52,12 @@
     background:  rgba(219, 70, 70, 0.788);
     color: white;
 }
-
+.login__btn-invited:hover{
+    transform: scale(1.1);
+    border: 2px solid black;
+    background:black;
+    color: white;
+}
 .login__btn-google > img{
     width: 40px;
 }

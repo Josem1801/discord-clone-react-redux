@@ -6,7 +6,7 @@
     margin-bottom: 15px;
 }
 
-.sidebar__photos-box-active{
+.sidebar__photos-box-hover{
     align-self: center;
     width: 4px; 
     height: 40px;
@@ -17,7 +17,11 @@
     opacity: 0;
     transition: var(--animation-ease);
 }
+
 .sidebar__photos-box:hover > span{
+    opacity: 1;
+}
+.sidebar__photos-box-active{
     opacity: 1;
 }
 
@@ -33,9 +37,10 @@
     cursor: pointer;
 
 }
-.sidebar__photos-box-photo > img{
+.sidebar__photos-box-photo > .img{
     width: 58px;
     height: 58px;
+    border-radius: 0;
 }
 
 .sidebar__photos-box-photo:hover{

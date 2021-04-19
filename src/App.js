@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import {login, logout, selectUser} from './features/userSlice'
 import { auth } from './firebase';
-import { setServerIdInfo } from './features/appSlice';
+
 
 function App() {
   const dispatch = useDispatch()
@@ -24,8 +24,8 @@ function App() {
           email: authUser.email,
           displayName: authUser.displayName,
         }))
-      }else{
-        //The user is logged out
+      }
+      if(!user){
         dispatch(logout())
       }
     })

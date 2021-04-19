@@ -26,18 +26,13 @@ function Chat() {
     const user = useSelector(selectUser)
     const serverName = useSelector(selectServerName)
 
-
-    const [input, setInput] = useState("") //<----------Input
-
+    const inputRef = useRef('') //<----------Input
+    const chatRef = useRef()
     const [messages, setMessages] = useState([])
-
-    const handdleChange = (e) => { //<-------Funcion del evento onChange para actualizar el estado
-        setInput(e.target.value)
-    }
 
     const handdleAddMessage = (e) => {
         e.preventDefault()
-        if(input.trim().length > 0){
+        if(inputRef.current.value.trim().length > 0){
             db.collection('servers').doc(serverId)
             .collection('categorys').doc(categoryId)
             .collection('channels').doc(channelId)
@@ -45,12 +40,14 @@ function Chat() {
                 photo: user.photo,
                 userName: user.displayName,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                message: input,
+                message: inputRef.current.value,
             })
+            inputRef.current.value = ''
+            chatRef.current.scrollIntoView({ behaivor:'smooth'})
         }else{
             alert('Enter something please')
         }
-        
+
     }
     useEffect(() => {
         if(channelId){
@@ -75,7 +72,7 @@ function Chat() {
 
 
             {/* Message's chat */}
-            <main className='chat__body'>
+            <main className='chat__body' ref={chatRef}>
                 {
                     messages.map( ( {messageId,messageData} ) => (
                         <Message
@@ -92,7 +89,7 @@ function Chat() {
             </main>
 
 
-            {/* white a message section */}
+            {/* write a message section */}
             <div className='chat__footer'>
                 <div className="chat__footer-send-message">
                     <IconButton>
@@ -100,8 +97,8 @@ function Chat() {
                     </IconButton>
                     <form>
                         <input
-                            type="text"
-                            onChange={handdleChange}
+                            ref={inputRef}
+                            disabled={!channelId}
                             placeholder={`Enviar mensaje a ${serverName ? serverName : user.displayName }`}
                         />
                         <button 
