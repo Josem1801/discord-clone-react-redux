@@ -50,7 +50,7 @@ abbr[title]:focus::after {
   
   /* position tooltip like the native one */
   position: absolute;
-  left: -30px;
+  left: -70px;
   bottom: -30px;
   width: auto;
   white-space: nowrap;
@@ -63,6 +63,7 @@ abbr[title]:focus::after {
   box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.4);
   font-size: 14px;
   padding: 6px 12px;
+  z-index: 100;
 }
 
 .chat__header-icons input[type=text]{

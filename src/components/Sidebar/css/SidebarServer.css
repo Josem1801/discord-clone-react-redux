@@ -6,7 +6,7 @@
     background: var(--colorbg-channels);
     width: 100%;
     height: 100vh;
-    color: var(--fontcolor-channels-section)
+    color: var(--fontcolor-channels-section);
 }
 
 /*---------Header------------------*/
@@ -39,6 +39,7 @@
     align-items: center; 
     padding: 10px 15px;
     background: #292b2f;
+
 }
 
 .sidebar__user-name{
@@ -71,7 +72,8 @@
     
     /* position tooltip like the native one */
     position: absolute;
-    left: 0;
+    left: -500px;
     bottom: 60px;
+    z-index: 99;
 }
 

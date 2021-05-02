@@ -7,7 +7,20 @@
     font-size: var(--fontsize-channels-section);
     font-weight: 700;
     flex: 1;
+    overflow-y: auto;
 }
+
+.sidebar__server-body::-webkit-scrollbar{
+    width: 10px;
+    height: 100%;
+}
+.sidebar__server-body::-webkit-scrollbar-track {
+    background: var(--bgcolor-body);
+}
+.sidebar__server-body::-webkit-scrollbar-thumb {
+    background-color: #14141434;
+}
+
 .sidebar__server-categorys-title{
     font-size: var(--fontsize-channels-title-section);
     display: flex;

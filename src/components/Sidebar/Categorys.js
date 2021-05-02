@@ -68,7 +68,7 @@ function SidebarCategory( {categoryId, categoryName} ) {
 
                 <abbr title="Crear Canal">
                     <AddIcon onClick={handdleAddChannel}/>
-                    </abbr>
+                </abbr>
 
             </div>
             {

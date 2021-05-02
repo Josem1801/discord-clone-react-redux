@@ -45,7 +45,7 @@
 
 .sidebar__photos-box-photo:hover{
     border-radius: 35%;
-    background: #43B581;
+    background: transparent;
 }
 
 .sidebar__photos-box-photo:hover path{

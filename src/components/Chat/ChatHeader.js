@@ -20,8 +20,8 @@ function ChatHeader() {
     const dispatch = useDispatch()
  
     const logOut = () => {
-        auth.signOut()
         dispatch(logout())
+        auth.signOut()
     }
 
     return (

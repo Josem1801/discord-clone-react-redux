@@ -8,7 +8,6 @@ function Photo( {photoLink, alt, serverId, serverName, children} ) {
     
     const dispatch = useDispatch()
     
-
     const handdleInfoId = () => {
         dispatch(
             setServerId({

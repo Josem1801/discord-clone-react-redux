@@ -36,13 +36,13 @@ function SidebarPhotos() {
     }
 
     useEffect(() => {
-            db.collection('servers').onSnapshot(snapshot => {
-                setServers(snapshot.docs.map(doc => ({
-                    serverId: doc.id,
-                    server: doc.data()
-                })))
-            })
-    }, [])
+        db.collection('servers').onSnapshot(snapshot => {
+            setServers(snapshot.docs.map(doc => ({
+                serverId: doc.id,
+                server: doc.data()
+            })))
+        })
+    }, [servers])
 
     return (
         <section className="sidebar__photos">

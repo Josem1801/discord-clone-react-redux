@@ -15,7 +15,6 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
-      
       if(authUser){
         //The user is logged in
         dispatch(login({
@@ -25,12 +24,9 @@ function App() {
           displayName: authUser.displayName,
         }))
       }
-      if(!user){
-        dispatch(logout())
-      }
+      
     })
-  }, [user])
-
+  }, [])
 
   return (
     <div className="App">
