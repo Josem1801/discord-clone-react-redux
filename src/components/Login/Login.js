@@ -9,8 +9,10 @@ import { setServerId } from '../../features/appSlice'
 
 function Login() {
     const dispatch = useDispatch()
+    
     const randomId = '000000'+ Math.floor(Math.random() * (100 - 0));
     const randomName = Math.floor(Math.random() * (100 - 0))
+
     const signIn = async () => {
         await auth.signInWithRedirect(provider).catch((error) => alert(error.message))
     }

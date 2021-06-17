@@ -11,6 +11,12 @@
 # production
 /build
 
+#others
+/.firebase
+/dist
+/.github
+
+
 # misc
 .DS_Store
 .env.local

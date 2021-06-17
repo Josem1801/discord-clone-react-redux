@@ -19,7 +19,7 @@ function Photo( {photoLink, alt, serverId, serverName, children} ) {
     return(
         <div className="sidebar__photos-box" id='' onClick={handdleInfoId}>
             <span className={`sidebar__photos-box-hover`}></span>
-            <div className="sidebar__photos-box-photo">
+            <div className={`sidebar__photos-box-photo ${children && "sidebar__photo-menu"}`}>
                 
                 {children ? children
                 :<Avatar className='img' src={`${photoLink}`} alt={alt}/>}
